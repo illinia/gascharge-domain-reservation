@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.gascharge.taemin.domain.entity.charge.Charge;
 import com.gascharge.taemin.domain.entity.user.User;
 import com.gascharge.taemin.domain.enums.reservation.ReservationStatus;
-import com.gascharge.taemin.entity.BaseTimeEntity;
+import com.gascharge.taemin.jpa.entity.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

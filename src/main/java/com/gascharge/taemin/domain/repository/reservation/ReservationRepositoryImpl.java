@@ -14,7 +14,7 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 import static com.gascharge.taemin.domain.entity.reservation.QReservation.reservation;
-import static com.gascharge.taemin.util.querydsl.QueryDslUtil.getOrderSpecifiers;
+import static com.gascharge.taemin.jpa.util.querydsl.QueryDslUtil.getOrderSpecifiers;
 
 @RequiredArgsConstructor
 public class ReservationRepositoryImpl implements ReservationRepositoryCustom {

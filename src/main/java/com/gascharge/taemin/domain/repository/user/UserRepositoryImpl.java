@@ -20,7 +20,7 @@ import java.util.Objects;
 import static com.gascharge.taemin.domain.entity.charge.QCharge.charge;
 import static com.gascharge.taemin.domain.entity.reservation.QReservation.reservation;
 import static com.gascharge.taemin.domain.entity.user.QUser.user;
-import static com.gascharge.taemin.util.querydsl.QueryDslUtil.getOrderSpecifiers;
+import static com.gascharge.taemin.jpa.util.querydsl.QueryDslUtil.getOrderSpecifiers;
 
 @RequiredArgsConstructor
 public class UserRepositoryImpl implements UserRepositoryCustom {

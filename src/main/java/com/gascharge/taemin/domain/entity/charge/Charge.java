@@ -3,7 +3,7 @@ package com.gascharge.taemin.domain.entity.charge;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.gascharge.taemin.domain.entity.reservation.Reservation;
 import com.gascharge.taemin.domain.enums.charge.ChargePlaceMembership;
-import com.gascharge.taemin.entity.BaseTimeEntity;
+import com.gascharge.taemin.jpa.entity.BaseTimeEntity;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
