@@ -7,10 +7,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Email;
+
 @Data
 @NoArgsConstructor
 public class UserSearchStatus {
 
+    @Email
     private String email;
     private UserEmailVerified emailVerified;
     private String name;
