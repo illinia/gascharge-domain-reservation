@@ -33,10 +33,10 @@ public class User implements Cloneable {
     private Long id;
 
     @Setter
-    @Column(nullable = false)
+    @NotNull
     private String name;
 
-    @Column(nullable = false)
+    @NotNull
     private String email;
 
     @Setter

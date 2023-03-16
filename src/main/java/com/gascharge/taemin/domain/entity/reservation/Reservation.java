@@ -15,6 +15,7 @@ import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.UUID;
@@ -35,20 +36,23 @@ public class Reservation extends BaseTimeEntity {
     @JsonIgnore
     private Long id;
 
-    @Column(nullable = false, updatable = false, unique = true)
+    @Column(updatable = false, unique = true)
+    @NotNull
     private String reservationValidationId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonBackReference
-    @JoinColumn(name = "USER_ID", nullable = false)
+    @JoinColumn(name = "USER_ID")
+    @NotNull
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonBackReference
-    @JoinColumn(name = "CHARGE_ID", nullable = false)
+    @JoinColumn(name = "CHARGE_ID")
+    @NotNull
     private Charge charge;
 
-    @Column(nullable = false)
+    @NotNull
     private LocalDateTime reservationTime;
 
     @ColumnDefault(value = "'BEFORE_CHARGE'")
