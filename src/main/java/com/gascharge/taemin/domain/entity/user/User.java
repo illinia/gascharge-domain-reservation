@@ -6,6 +6,7 @@ import com.gascharge.taemin.common.oauth.AuthProvider;
 import com.gascharge.taemin.domain.entity.reservation.Reservation;
 import com.gascharge.taemin.domain.enums.user.UserAuthority;
 import com.gascharge.taemin.domain.enums.user.UserEmailVerified;
+import com.gascharge.taemin.jpa.entity.BaseTimeEntity;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
@@ -19,12 +20,13 @@ import java.util.List;
 @NoArgsConstructor
 @ToString(exclude = {"password"})
 @Entity
-@Table(name = "USERS",
-        uniqueConstraints = {
-                @UniqueConstraint(columnNames = {"USER_ID", "email"})
-        })
+@Table(name = "USERS"
+//        ,uniqueConstraints = {
+//                @UniqueConstraint(columnNames = {"USER_ID", "email"})
+//        }
+        )
 @DynamicInsert
-public class User implements Cloneable {
+public class User extends BaseTimeEntity implements Cloneable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -14,9 +14,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 
-import java.util.List;
-import java.util.Objects;
+import java.lang.reflect.Field;
+import java.util.*;
 
+import static com.gascharge.taemin.common.util.DtoFieldNotNullChecker.checkAnyFieldNotNull;
 import static com.gascharge.taemin.domain.entity.charge.QCharge.charge;
 import static com.gascharge.taemin.domain.entity.reservation.QReservation.reservation;
 import static com.gascharge.taemin.domain.entity.user.QUser.user;
@@ -29,6 +30,10 @@ public class UserRepositoryImpl implements UserRepositoryCustom {
 
     @Override
     public Page<User> findUserWithSearchStatus(UserSearchStatus userSearchStatus, Pageable pageable) {
+        Optional<Field> any = checkAnyFieldNotNull(userSearchStatus);
+
+        if (any.isEmpty()) return new PageImpl<>(new ArrayList<>(), Pageable.unpaged(), 0);
+
         List<OrderSpecifier> orderSpecifiers = getOrderSpecifiers(pageable, User.class, "user");
 
         List<User> fetch = queryFactory

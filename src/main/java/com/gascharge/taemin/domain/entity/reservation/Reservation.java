@@ -42,13 +42,13 @@ public class Reservation extends BaseTimeEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonBackReference
-    @JoinColumn(name = "USER_ID")
+    @JoinColumn(name = "USER_ID", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     @NotNull
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonBackReference
-    @JoinColumn(name = "CHARGE_ID")
+    @JoinColumn(name = "CHARGE_ID", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     @NotNull
     private Charge charge;
 
